@@ -7,7 +7,7 @@ public class Mascota {
      */
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner (System.in);
-        int Alimentacion = 90; 
+        int Alimentacion = 100;
         int Energia = 100;
         int Diversion = 100;
         String NombreUsuario;
@@ -19,12 +19,12 @@ public class Mascota {
         System.out.println("Que lindo nombre! Me presento, soy tu mascota virtual, ¿Te gustaria darme un nombre?"); 
         NombreUsuario = sc.nextLine ();
         System.out.println("Wow, me encanta mi nombre. ¿Que es lo primero que haremos hoy?");
-        System.out.println("(Comer, Jugar, Dormir)");
+        System.out.println("(comer, jugar, dormir, estadisticas, 0)");
         String op = sc.nextLine ();
         switch (op) {
-        
-            case "Comer":
-        if (Alimentacion<100){ 
+
+            case "comer":
+        if (Alimentacion<100){
             System.out.println("¿Que me darás de comer?");
             System.out.println("(Carne, Pollo)");
                     String opp = sc.nextLine ();
@@ -49,7 +49,7 @@ public class Mascota {
 
         break;
 
-        case "Jugar":
+        case "jugar":
          if (Energia>=20){ 
 
             System.out.println("Genial!! ¿Que jugaremos?, estas son las opciones (Triquia)");
@@ -79,7 +79,7 @@ public class Mascota {
         }
         break;
 
-        case "Dormir":
+        case "dormir":
         if(Energia==100){
 
             System.out.println("No, en este momento no quiero descansar, ¡Vamos a jugar " + NombreUsuario + "!");
@@ -165,14 +165,25 @@ public class Mascota {
             System.out.println("Mmm... No me siento tan cansado para dormir tanto tiempo, ¿Que te parece un poco menos?");
         }
         break;
-        
+
+        }
+        break;
+        }
+        case "estadisticas": {
+            System.out.println("Alimentacion:" + Alimentacion);
+            System.out.println("Energia:" + Energia);
+            System.out.println("Diversion:" + Diversion);
+        }
+        case "0":
+            int i = sc.nextInt();
+            while (i != 0){
+
+            }
+
 
 
         }
-        break;    
 
-        }
-        
-        } 
+
     }
 }

@@ -1,5 +1,3 @@
-import com.sun.org.apache.xpath.internal.operations.Div;
-
 import java.util.Scanner;
 
 public class Mascota {
@@ -22,30 +20,23 @@ public class Mascota {
         NombreUsuario = sc.nextLine ();
         System.out.println("Wow, me encanta mi nombre. ¿Que es lo primero que haremos hoy?");
         System.out.println("(comer, jugar, dormir, estadisticas, 0)");
-
-
-
-
         String op = sc.nextLine ();
         while (!op.equals("0")) {
-
-
-
         switch (op) {
 
             case "comer":
                 if (Alimentacion < 100) {
                     System.out.println("¿Que me darás de comer?");
-                    System.out.println("(Carne, Pollo)");
+                    System.out.println("(carne, pollo)");
                     String opp = sc.nextLine();
                     switch (opp) {
-                        case "Pollo":
+                        case "pollo":
                    Alimentacion +=10;
                             System.out.println("Muchas gracias " + NombreUsuario + " ¡estaba delicioso!");
 
                             break;
 
-                        case "Carne":
+                        case "carne":
                           Alimentacion += 10;
                             System.out.println("Muchas gracias " + NombreUsuario + " ¡estaba delicioso!");
 
@@ -61,11 +52,11 @@ public class Mascota {
             case "jugar":
                 if (Energia >= 20) {
 
-                    System.out.println("Genial!! ¿Que jugaremos?, estas son las opciones (Triqui)");
+                    System.out.println("Genial!! ¿Que jugaremos?, estas son las opciones (triqui, secuencia de colores)");
                     String opp = sc.nextLine();
                     switch (opp) {
 
-                        case "Triqui":
+                        case "triqui":
                             if (Energia == 100 && Diversion==100) {
                                 Energia -= 10;
                                 Alimentacion -= 10;
@@ -82,6 +73,28 @@ public class Mascota {
                             } else if (Energia<=90 && Diversion==100) {
                                 Energia -= 10;
                                 Alimentacion -= 10;
+                                System.out.println("Genial, eres grandioso jugando");
+
+
+                            }
+                            break;
+                        case "secuencia de colores":
+                            if (Energia == 100 && Diversion==100) {
+                                Energia -= 20;
+                                Alimentacion -= 20;
+                                System.out.println("Genial, eres grandioso jugando");
+
+                            } else if (Energia == 100 && Diversion<=90) {
+
+                                Energia -= 20;
+                                Alimentacion -= 20;
+                                Diversion += 20;
+                                System.out.println("Genial, eres grandioso jugando");
+
+
+                            } else if (Energia<=90 && Diversion==100) {
+                                Energia -= 20;
+                                Alimentacion -= 20;
                                 System.out.println("Genial, eres grandioso jugando");
 
 
@@ -181,7 +194,6 @@ public class Mascota {
                                 System.out.println("Mmm... No me siento tan cansado para dormir tanto tiempo, ¿Que te parece un poco menos?");
                             }
                             break;
-
                     }
                 }
                     break;
@@ -197,12 +209,7 @@ public class Mascota {
             System.out.println("(comer, jugar, dormir, estadisticas, 0)");
 
             op = sc.nextLine();
-
-
-
                 }
-
-
         }
         }
 
